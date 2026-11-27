@@ -4,7 +4,12 @@
   var msg = document.getElementById("msg");
   var btn = document.getElementById("open");
   var f = null;
-  try { f = new URLSearchParams(window.location.search).get("f"); } catch (e) { f = null; }
+  // #f=（フラグメント）を先に読む。フラグメントはサーバーに送られないため、件名などがGitHub Pagesに渡らない（2026-11-27）。
+  // ?f= も今までどおり読む（前に作ったリンクのため）。
+  try { f = new URLSearchParams(window.location.hash.replace(/^#/, "")).get("f"); } catch (e) { f = null; }
+  if (f === null) {
+    try { f = new URLSearchParams(window.location.search).get("f"); } catch (e) { f = null; }
+  }
   function ok(p) {
     if (typeof p !== "string" || p.length === 0 || p.length > 400) return false;
     if (/[\u0000-\u001f\u007f-\u009f\\]/.test(p)) return false;

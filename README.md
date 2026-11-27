@@ -2,6 +2,6 @@
 
 Notionのリンクから Obsidian の保管庫のファイルを開くための中継のページ。
 
-`https://nicopro.github.io/obsidian-link/?f=<保管庫の中の相対パス>`
+`https://nicopro.github.io/obsidian-link/#f=<保管庫の中の相対パス>`（`#` の後ろはサーバーに送られないので、件名などがGitHub Pagesに渡らない。前に作った `?f=` のリンクも開ける）
 
 保管庫の名前は固定。相対パス以外（`..`・先頭の `/`・`://`・制御文字）は開かない。解析・外部のスクリプトはなし。
