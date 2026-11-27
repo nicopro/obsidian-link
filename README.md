@@ -1,0 +1,7 @@
+# obsidian-link
+
+Notionのリンクから Obsidian の保管庫のファイルを開くための中継のページ。
+
+`https://nicopro.github.io/obsidian-link/?f=<保管庫の中の相対パス>`
+
+保管庫の名前は固定。相対パス以外（`..`・先頭の `/`・`://`・制御文字）は開かない。解析・外部のスクリプトはなし。
